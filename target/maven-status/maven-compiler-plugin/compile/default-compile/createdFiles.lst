@@ -1,4 +1,5 @@
 com\szqz\util\RedisConfig.class
+com\szqz\mapper\UserQueryMapper.class
 com\szqz\vo\ResultVo.class
 com\szqz\util\JwtUtil.class
 com\szqz\control\LoginController.class
@@ -8,8 +9,11 @@ com\szqz\entity\Cart.class
 com\szqz\mapper\CommentMapper.class
 com\szqz\mapper\ItemMapper.class
 com\szqz\util\RedisCache.class
+com\szqz\service\ManageService.class
 com\szqz\service\mpl\UserServiceImpl.class
 com\szqz\util\JDBCUtils.class
+com\szqz\service\CommentService.class
+com\szqz\service\mpl\ManageServiceImpl.class
 com\szqz\control\LoginUser.class
 com\szqz\service\mpl\LoginServiceImpl.class
 com\szqz\vo\ResStatus.class
@@ -27,10 +31,16 @@ com\szqz\util\Base64Utils.class
 com\szqz\entity\Item.class
 com\szqz\control\UserController.class
 com\szqz\mapper\UserBuyMapper.class
+com\szqz\service\mpl\UserBuyServiceImpl.class
 com\szqz\mapper\UserMapper.class
 com\szqz\service\mpl\ItemQueryServiceImpl.class
+com\szqz\service\UserBuyService.class
 com\szqz\util\SecurityUtils.class
 com\szqz\mapper\ItemQueryMapper.class
+com\szqz\service\mpl\CommentServiceImpl.class
+com\szqz\control\CartController.class
+com\szqz\service\UserListService.class
 com\szqz\entity\Comment.class
 com\szqz\control\GlobalExceptionHandler.class
 com\szqz\control\ItemQueryController.class
+com\szqz\control\CommentControl.class

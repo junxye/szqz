@@ -28,7 +28,14 @@
         WHERE id = #{id}
     </update>
 
-    <delete id="deleteItem">
-        DELETE FROM secondhand.item WHERE id = #{id}
-    </delete>
+    <update id="deleteItem">
+        UPDATE secondhand.item
+        SET is_sell = 1 AND buyer IS NULL
+        WHERE id = #{id}
+    </update>
+
+    <select id="getIsSell" resultType="int">
+        SELECT is_sell FROM secondhand.item
+        WHERE id = #{id}
+    </select>
 </mapper>

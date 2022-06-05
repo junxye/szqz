@@ -22,8 +22,10 @@
             (#{item.name}, #{item.price}, #{item.seller}, #{item.introduce}, #{item.check},
              #{item.checkOpinion}, #{item.isSell}, #{item.picture}, #{item.addTime}, #{item.sellTime})
     </insert>
-<!--
-    <select id="selectByTime" resultType="List">
-        SELECT * FROM secondhand.item WHERE item_check = 1 AND is_sell = 1
-    </select>-->
+
+    <select id="getCheck" resultType="int">
+        SELECT item_check FROM secondhand.item
+        WHERE id = #{id}
+    </select>
+
 </mapper>

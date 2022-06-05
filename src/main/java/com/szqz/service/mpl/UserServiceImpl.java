@@ -77,7 +77,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public ResultVo userDelete(String phoneNumber) {
-        return null;
+        int i = userMapper.deleteUser(phoneNumber);
+        if (i > 0)
+            return new ResultVo(ResStatus.OK, "删除成功", null);
+        else
+            return new ResultVo(ResStatus.NO, "删除失败", null);
     }
 
     @Override

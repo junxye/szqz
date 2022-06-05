@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +43,13 @@ public class UserController {
                            @Param("introduce") String introduce){
         User user = new User(name, password, age, sex, introduce, picture);
         return userService.userModify(user);
+    }
+
+    @ApiOperation("删除当前用户")
+    @PostMapping("/user/delete")
+    public ResultVo delete(){
+        String phoneNumber = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userService.userDelete(phoneNumber);
     }
 
     @ApiOperation("查询用户商品")

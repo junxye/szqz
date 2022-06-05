@@ -6,6 +6,7 @@
         <result property="itemName" column="item_name"/>
         <result property="price" column="price"/>
         <result property="seller" column="seller"/>
+        <result property="buyer" column="buyer"/>
         <result property="introduce" column="introduce"/>
         <result property="itemCheck" column="item_check"/>
         <result property="checkOpinion" column="check_opinion"/>
@@ -47,7 +48,19 @@
 
     <select id="selectByKeyword" resultType="com.szqz.entity.Item">
         SELECT * FROM secondhand.item
-        WHERE item_name LIKE #{keyword}
+        WHERE item_name LIKE '%'#{keyword}'%'
+        ORDER BY add_time
+    </select>
+
+    <update id="manageItem">
+        UPDATE secondhand.item SET
+        item_check = #{check} AND check_opinion = #{opinion}
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectAllItem" resultType="com.szqz.entity.Item">
+        SELECT * FROM secondhand.item
+        WHERE item_check = #{state}
         ORDER BY add_time
     </select>
 </mapper>

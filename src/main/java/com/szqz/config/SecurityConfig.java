@@ -138,6 +138,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //     /index需要权限为ROLE_USER才能访问   /hello需要权限为ROLE_ADMIN才能访问
         http.authorizeRequests()
+                .antMatchers("/user").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/index").hasRole("USER")
                 .antMatchers("/hello","/manager/*").hasRole("ADMIN")
 

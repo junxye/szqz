@@ -9,4 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 @Repository
 @Mapper
 public interface UserMapper extends GeneralDAO<User>, BaseMapper<User>{
+
+    // 删除
+    int deleteUser(String phoneNumber);
 }

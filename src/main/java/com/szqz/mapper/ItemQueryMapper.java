@@ -27,4 +27,10 @@ public interface ItemQueryMapper extends GeneralDAO<Item>, BaseMapper<Item> {
 
     // 关键词搜索
     List<Item> selectByKeyword(@Param("keyword") String keyword);
+
+    // 管理商品
+    int manageItem(int id, int check, String opinion);
+
+    // 查询所有商品
+    List<Item> selectAllItem(int state);
 }

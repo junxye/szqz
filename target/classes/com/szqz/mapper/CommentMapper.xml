@@ -9,4 +9,26 @@
         <result property="buyer" column="buyer"/>
         <result property="addTime" column="add_time"/>
     </resultMap>
+
+    <select id="queryComment" resultType="com.szqz.entity.Comment">
+        SELECT * FROM secondhand.comment
+        WHERE buyer = #{buyer} AND add_time = #{time}
+    </select>
+
+    <select id="queryUserComment" resultType="com.szqz.entity.Comment">
+        SELECT * FROM secondhand.comment
+        WHERE seller = #{phoneNumber}
+    </select>
+
+    <select id="queryUpper" resultType="com.szqz.entity.Comment">
+        SELECT * FROM secondhand.comment
+        WHERE seller = #{phoneNumber}
+        ORDER BY grade
+    </select>
+
+    <select id="queryDown" resultType="com.szqz.entity.Comment">
+        SELECT * FROM secondhand.comment
+        WHERE seller = #{phoneNumber}
+        ORDER BY grade DESC
+    </select>
 </mapper>

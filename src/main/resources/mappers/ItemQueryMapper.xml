@@ -51,4 +51,16 @@
         WHERE item_name LIKE '%'#{keyword}'%'
         ORDER BY add_time
     </select>
+
+    <update id="manageItem">
+        UPDATE secondhand.item SET
+        item_check = #{check} AND check_opinion = #{opinion}
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectAllItem" resultType="com.szqz.entity.Item">
+        SELECT * FROM secondhand.item
+        WHERE item_check = #{state}
+        ORDER BY add_time
+    </select>
 </mapper>

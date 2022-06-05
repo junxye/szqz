@@ -14,11 +14,9 @@
         <result property="grade" column="grade"/>
         <result property="addTime" column="add_time"/>
     </resultMap>
+
+    <delete id="deleteUser">
+        DELETE FROM secondhand.user
+        WHERE phone_number = #{phoneNumber}
+    </delete>
 </mapper>
-        <!--   <insert id="insertUser" useGeneratedKeys="true" keyProperty="userId">
-        INSERT INTO users(user_name,user_pwd,user,user_img)
-        VALUE(#{userName},#{userPwd},#{user},#{userImg})
-    </insert>
-
-
--->

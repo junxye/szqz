@@ -20,4 +20,7 @@ public interface UserBuyMapper extends GeneralDAO<Item>, BaseMapper<Item> {
 
     // 删除拍下商品
     int deleteItem(int id);
+
+    // 商品购买状态
+    int getIsSell(int id);
 }
